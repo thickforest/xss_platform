@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^([0-9a-zA-Z]{6})$ /XSS/index.php?do=code&urlKey=$1 [L]
+RewriteRule ^do/auth/(\w+?)(/domain/([\w.]+?))?$  /XSS/index.php?do=do&auth=$1&domain=$3 [L]
+RewriteRule ^register/(.?)$ /XSS/index.php?do=register&key=$1 [L]
+RewriteRule ^register-validate/(.?)$ /XSS/index.php?do=register&act=validate&key=$1 [L]
